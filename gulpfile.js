@@ -60,7 +60,7 @@ function browserSyncFunction() {
 function html() {
     return src(path.src.html)
         .pipe(fileInclude())
-        .pipe(webpHtml())
+        // .pipe(webpHtml())
         .pipe(dest(path.build.html))
         .pipe(browserSync.stream());
 }
@@ -75,7 +75,7 @@ function css() {
             overrideBrowserslist: ['last 5 versions'],
             cascade: true
         }))
-        .pipe(webpCss())
+        // .pipe(webpCss())
         .pipe(dest(path.build.css))
         .pipe(rename({
             extname: '.min.css'
