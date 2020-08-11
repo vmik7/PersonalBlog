@@ -15,7 +15,7 @@ let path = {
         html: [sourceFolder + '/*.html', '!' + sourceFolder + '/_*.html'],
         css: sourceFolder + '/scss/style.scss',
         js: sourceFolder + '/js/script.js',
-        img: sourceFolder + '/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}',
+        img: sourceFolder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
         fonts: sourceFolder + '/fonts/*.ttf'
     },
     watch: {
@@ -41,7 +41,7 @@ let uglify = require('gulp-uglify-es').default;
 let imagemin = require('gulp-imagemin');
 let webp = require('gulp-webp');
 let webpHtml = require('gulp-webp-html');
-let webpCss = require('gulp-webpcss');
+let webpCss = require('gulp-webp-css');
 let svgSprite = require('gulp-svg-sprite');
 let ttf2woff = require('gulp-ttf2woff');
 let ttf2woff2 = require('gulp-ttf2woff2');
@@ -75,7 +75,7 @@ function css() {
             overrideBrowserslist: ['last 5 versions'],
             cascade: true
         }))
-        // .pipe(webpCss())
+        .pipe(webpCss())
         .pipe(dest(path.build.css))
         .pipe(rename({
             extname: '.min.css'
