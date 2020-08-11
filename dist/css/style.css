@@ -597,7 +597,6 @@ body {
 }
 
 .top-menu__item {
-  font-size: 14px;
   padding: 18px;
   border-left: 1px solid #3c3c3c;
 }
@@ -606,8 +605,14 @@ body {
   border-right: 1px solid #3c3c3c;
 }
 
-.logo {
+.top-menu__item a {
+  font-size: 14px;
+  color: #fff;
+}
+
+.logo a {
   text-transform: uppercase;
+  text-decoration: none;
   font-size: 19px;
   font-weight: 600;
   color: #fefefe;
@@ -709,6 +714,7 @@ body {
   height: 8px;
   border: 1px solid #ffffff;
   margin-right: 8px;
+  cursor: pointer;
 }
 
 .banner-switch__dots .dot:last-child {
@@ -717,6 +723,11 @@ body {
 
 .banner-switch__dots .dot_active {
   background-color: #999999;
+}
+
+.banner-switch__left-arrow,
+.banner-switch__right-arrow {
+  cursor: pointer;
 }
 
 .banner-switch__row {
@@ -931,6 +942,7 @@ body {
   text-transform: uppercase;
   color: #999;
   letter-spacing: 0.01em;
+  cursor: pointer;
 }
 
 .post__title {
@@ -971,6 +983,15 @@ body {
   color: #999;
 }
 
+.post__info-item_comments,
+.post__info-item_author {
+  cursor: pointer;
+}
+
+.post__info-item_likes i {
+  cursor: pointer;
+}
+
 .post__text {
   font-size: 14px;
   font-weight: 300;
@@ -991,10 +1012,9 @@ body {
 .post__read-more {
   width: 110px;
   height: 27px;
-  border-left: 1px solid #d7d7d7;
-  border-right: 1px solid #d7d7d7;
   text-align: center;
   margin: 0 auto;
+  position: relative;
 }
 
 .post__read-more a {
@@ -1005,6 +1025,40 @@ body {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   text-decoration: none;
+}
+
+.post__read-more:before,
+.post__read-more:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 1px;
+  height: 100%;
+  background: #d7d7d7;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.post__read-more:before {
+  left: 0;
+}
+
+.post__read-more:after {
+  right: 0;
+}
+
+.post__read-more:hover:before {
+  -webkit-transform: rotate(-90deg) translateY(-10px);
+      -ms-transform: rotate(-90deg) translateY(-10px);
+          transform: rotate(-90deg) translateY(-10px);
+}
+
+.post__read-more:hover:after {
+  -webkit-transform: rotate(90deg) translateY(-10px);
+      -ms-transform: rotate(90deg) translateY(-10px);
+          transform: rotate(90deg) translateY(-10px);
 }
 
 .post .post__quote-text,

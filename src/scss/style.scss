@@ -57,21 +57,31 @@ body {
     }
 
     &__item {
-        font-size: 14px;
         padding: 18px;
         border-left: 1px solid #3c3c3c;
+
+        &:last-child {
+            border-right: 1px solid #3c3c3c;
+        }
+
+        a {
+            font-size: 14px;
+            color: #fff;
+        }
     }
-    &__item:last-child {
-        border-right: 1px solid #3c3c3c;
-    }
+    
 }
 
 .logo {
-    text-transform: uppercase;
-    font-size: 19px;
-    font-weight: 600;
-    color: #fefefe;
-    letter-spacing: 0.1em;
+
+    a {
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: 19px;
+        font-weight: 600;
+        color: #fefefe;
+        letter-spacing: 0.1em;
+    }
 }
 
 .header {
@@ -149,7 +159,8 @@ body {
             width: 8px;
             height: 8px;
             border: 1px solid #ffffff; 
-            margin-right: 8px;  
+            margin-right: 8px; 
+            cursor: pointer; 
         }
         .dot:last-child {
             margin-right: 0;
@@ -157,6 +168,10 @@ body {
         .dot_active {
             background-color: #999999;
         }
+    }
+
+    &__left-arrow, &__right-arrow {
+        cursor: pointer;
     }
 
     &__row {
@@ -351,6 +366,7 @@ body {
         text-transform: uppercase;
         color: #999;
         letter-spacing: 0.01em;
+        cursor: pointer;
     }
 
     &__title {
@@ -385,6 +401,14 @@ body {
             color: #999;
 
         }
+
+        &_comments, &_author {
+            cursor: pointer;
+        }
+
+        &_likes i {
+            cursor: pointer;
+        }
     }
 
     &__text {
@@ -405,10 +429,11 @@ body {
     &__read-more {
         width: 110px;
         height: 27px;
-        border-left: 1px solid #d7d7d7;
-        border-right: 1px solid #d7d7d7;
+        // border-left: 1px solid #d7d7d7;
+        // border-right: 1px solid #d7d7d7;
         text-align: center;
         margin: 0 auto;
+        position: relative;
 
         a {
             color: #212121;
@@ -418,6 +443,32 @@ body {
             letter-spacing: 0.1em;
             text-transform: uppercase;
             text-decoration: none;
+        }
+
+        &:before, &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            display: block;
+            width: 1px;
+            height: 100%;
+            background: #d7d7d7;
+            transition: all 0.3s ease;
+        }
+        &:before {
+            left: 0;
+        }
+        &:after {
+            right: 0;
+        }
+
+        &:hover {
+            &:before {
+                transform: rotate(-90deg) translateY(-10px);
+            }
+            &:after {
+                transform: rotate(90deg) translateY(-10px);
+            }
         }
     }
 
