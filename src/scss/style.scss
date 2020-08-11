@@ -84,12 +84,13 @@ body {
     }
 }
 
+$banner-height: 511px;
 .header {
     background: linear-gradient(180deg, $dark-bg-color 0%, $dark-bg-color 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%);
 
 
     &__wrapper {
-        height: 511px;
+        height: $banner-height;
         overflow: hidden;
         position: relative;
     }
@@ -121,12 +122,21 @@ body {
 }
 
 .banner {
-    background: url('../img/header-banner.png') center top / cover no-repeat;
-    height: 511px;
+    height: $banner-height;
     padding-left: 87px;
     display: flex;
     align-items: center;
     color: #fff;
+
+    &:nth-child(1) {
+        background: url('../img/header-banner-1.png') center center / cover no-repeat;
+    }
+    &:nth-child(2) {
+        background: url('../img/header-banner-2.jpg') center center / cover no-repeat;
+    }
+    &:nth-child(3) {
+        background: url('../img/header-banner-3.jpg') center center / cover no-repeat;
+    }
 
     &__offer {
         max-width: 420px;
