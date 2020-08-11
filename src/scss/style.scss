@@ -208,6 +208,16 @@ body {
         font-weight: 500;
         text-transform: uppercase;
         background: #212121;
+
+        transition: all 0.3s ease;
+
+        &:hover {
+            background: #000;
+        }
+        &:active {
+            background: #fff;
+            color: #000;
+        }
     }
 }
 
